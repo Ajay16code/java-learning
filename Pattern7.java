@@ -30,3 +30,12 @@ public class Pattern7 {
         }
     }
 }
+    A
+   CBA
+  EDCBA
+ GFEDCBA
+IHGFEDCBA
+ GFEDCBA
+  EDCBA
+   CBA
+    A
