@@ -13,7 +13,11 @@ public class array4
       }
    for(int i=0; i<arr.length;i++){
           System.out.print(arr[i]+" ");
+          System.out.println();
+          System.out.println(arr[i].length);
           System.out.println(sum);
+          Cake c1 = new Cake();
+          c1 = c1.thread.currentthread();
       }
 }
 }
