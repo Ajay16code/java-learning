@@ -1,18 +1,24 @@
-import java.util.*;
-import java.io.*;
+package class1;
 
-public class threading{
-     public static void main(String [] args)
-{
-       System.out.println("Making bake :",threading.currentthread.getId())
-       System.out.println("Packaage a cake :",threading.currentthread.getId())
-       System.out.println("Delivery a cake :",threading.currentthread.getId())
-       int count = 0;
-       int Cake = 1;
-       for(int i=0;i<Cake;i++){
-            
-       Cake = count++;
-       System.out.print(Cake);
+class Cake extends Thread{
+	public void run() {
+		System.out.println("Mixing Ingredients for Cake "+Thread.currentThread().getId());
+		System.out.println("Backing Cake "+Thread.currentThread().getId());
+		System.out.println("Decorating Cake "+Thread.currentThread().getId());
+
+
+	}
 }
+public class ThreadBaking {
+
+	public static void main(String[] args) {
+	
+		int cakecount = 4;
+		for(int i=0;i<cakecount;i++)
+			Cake cake = new Cake();
+			cake.start();
+
+
+	}
 
 }
