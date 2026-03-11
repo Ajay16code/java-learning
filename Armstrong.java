@@ -1,7 +1,9 @@
 public class ArmstrongArray {
     public static void main(String[] args) {
 
-        int[] arr = {153, 370, 371, 407, 123, 200};
+        Scanner sc = new Scanner(System.in);
+
+        int[] arr = new int[];
 
         System.out.println("Armstrong numbers in array:");
 
