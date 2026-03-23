@@ -14,7 +14,6 @@ class LRUCache {
             value = v;
         }
     }
-
     public LRUCache(int capacity) {
         this.capacity = capacity;
         map = new HashMap<>();
@@ -72,3 +71,5 @@ class LRUCache {
         System.out.println(cache.get(2)); // -1
     }
 }
+
+System.out.println("End");
