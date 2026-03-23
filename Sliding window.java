@@ -25,3 +25,5 @@ public class LongestSubstring {
         System.out.println(lengthOfLongestSubstring(s)); // 3
     }
 }
+
+System.out.println("End");
