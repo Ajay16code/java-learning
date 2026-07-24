@@ -1,33 +1,38 @@
 class Solution {
-public:
-    int uniqueXorTriplets(vector<int>& nums) {
-        const int MAX = 2048;
 
-        vector<bool> one(MAX, false);
-        vector<bool> two(MAX, false);
-        vector<bool> three(MAX, false);
-
-        // Build XOR values using one and two elements
-        for (int val : nums) {
-            for (int x = 0; x < MAX; x++) {
-                if (one[x])
-                    two[x ^ val] = true;
-            }
-            one[val] = true;
+    public int uniqueXorTriplets(int[] nums) {
+        int m = 0;
+        for (int v : nums) {
+            m = Math.max(m, v);
         }
-
-        // Build XOR values using three elements
-        for (int val : nums) {
-            for (int x = 0; x < MAX; x++) {
-                if (two[x])
-                    three[x ^ val] = true;
+        int u = 1;
+        while (u <= m) {
+            u <<= 1;
+        }
+        boolean[] one = new boolean[u];
+        boolean[] two = new boolean[u];
+        boolean[] three = new boolean[u];
+        for (int v : nums) {
+            one[v] = true;
+            for (int x = 0; x < u; x++) {
+                if (one[x]) {
+                    two[x ^ v] = true;
+                }
             }
         }
-
+        for (int v : nums) {
+            for (int x = 0; x < u; x++) {
+                if (two[x]) {
+                    three[x ^ v] = true;
+                }
+            }
+        }
         int ans = 0;
-        for (bool exists : three)
-            ans += exists;
-
+        for (boolean b : three) {
+            if (b) {
+                ans++;
+            }
+        }
         return ans;
     }
-};
+}
